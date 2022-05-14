@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro Section DropDown</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+
+
+<body aria-hidden="false">
+    <header>
+        <img src="./assets/logo.svg" alt="" class="logo">
+        <button class="toggle" aria-controls="menu" aria-expanded="false"></button>
+        <nav data-visible="false" class="menu">
+            <a href="#">Features
+                <nav class="sub-nav">
+                    <a href="#" class="todo">Todo List</a>
+            <a href="#" class="cal">Calendar</a>
+            <a href="#" class="reminder">Reminders</a>
+            <a href="#" class="plan">Planning</a>
+        </nav>
+        </a>
+        <a href="#">Company</a>
+        <a href="#">Careers</a>
+        <a href="#">About</a>
+
+
+        <a href="#">Login</a>
+        <a href="#" class="register">Register</a>
+        </nav>
+    </header>
+    <script>
+        const toggleMenu = document.querySelector(".toggle");
+        const navToggle = document.querySelector(".menu");
+        const body = document.querySelector("body");
+        toggleMenu.addEventListener('click', () => {
+            const visibility = navToggle.getAttribute('date-visible');
+            if (visibility === "false") {
+                navToggle.setAttribute("data-visible", true);
+                toggleMenu.setAttribute("aria-expanded=", true);
+                body.setAttribute("aria-hidden", true);
+            } else if (visibility === true) {
+                navToggle.setAttribute("data-visible", false);
+                toggleMenu.setAttribute("aria-expanded=", false);
+                body.setAttribute("aria-hidden", false);
+            }
+        })
+    </script>
+</body>
+
+</html>
