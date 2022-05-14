@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro Section DropDown</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+
+
+<body aria-hidden="false">
+    <header>
+        <img src="./assets/logo.svg" alt="" class="logo">
+        <button class="toggle" aria-controls="menu" aria-expanded="false"></button>
+        <nav data-visible="false" class="menu">
+            <button class="sub-toggle-1" id="features" aria-expanded="false">Features</button>
+            <nav class="sub-nav-1" data-visible="false">
+                <a href="#" class="todo">Todo List</a>
+                <a href="#" class="cal">Calendar</a>
+                <a href="#" class="reminder">Reminders</a>
+                <a href="#" class="plan">Planning</a>
+            </nav>
+            <button class="sub-toggle-2" id="company" aria-expanded="false">Company</button>
+            <nav class="sub-nav-2" data-visible="false">
+                <a href="#">History</a>
+                <a href="#">Our Team</a>
+                <a href="#">Blog</a>
+
+            </nav>
+            <a href="#">Careers</a>
+            <a href="#">About</a>
+            <a href="#" class="login">Login</a>
+            <a href="#" class="register">Register</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Make Remote work</h1>
+        <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+        <a href="#">Learn More</a>
+        <div class="sponsors">
+            <img src="./assets/client-databiz.svg" alt="">
+            <img src="./assets/client-audiophile.svg" alt="">
+            <img src="./assets/client-meet.svg" alt="">
+            <img src="./assets/client-maker.svg" alt="">
+        </div>
+    </main>
+    <script>
+        const toggleMenu = document.querySelector(".toggle");
+        const navToggle = document.querySelector(".menu");
+        const body = document.querySelector("body");
+
+        toggleMenu.addEventListener('click', () => {
+            const visibility = navToggle.getAttribute("data-visible");
+            if (visibility === "false") {
+                navToggle.setAttribute("data-visible", true);
+                toggleMenu.setAttribute("aria-expanded", true);
+                body.setAttribute("aria-hidden", true);
+            } else if (visibility === "true") {
+                navToggle.setAttribute("data-visible", false);
+                toggleMenu.setAttribute("aria-expanded", false);
+                body.setAttribute("aria-hidden", false);
+            }
+        });
+        const toggleSubMenu1 = document.querySelector(".sub-toggle-1");
+        const subNav1 = document.querySelector(".sub-nav-1")
+        toggleSubMenu1.addEventListener('click', () => {
+            const subVisibility = subNav1.getAttribute("data-visible");
+            if (subVisibility === "false") {
+                subNav1.setAttribute("data-visible", true);
+                toggleSubMenu1.setAttribute("aria-expanded", true);
+            } else if (subVisibility === "true") {
+                subNav1.setAttribute("data-visible", false);
+                toggleSubMenu1.setAttribute("aria-expanded", false);
+            }
+        });
+        const toggleSubMenu2 = document.querySelector(".sub-toggle-2");
+        const subNav2 = document.querySelector(".sub-nav-2")
+        toggleSubMenu2.addEventListener('click', () => {
+            const subVisibility = subNav2.getAttribute("data-visible");
+            if (subVisibility === "false") {
+                subNav2.setAttribute("data-visible", true);
+                toggleSubMenu2.setAttribute("aria-expanded", true);
+            } else if (subVisibility === "true") {
+                subNav2.setAttribute("data-visible", false);
+                toggleSubMenu2.setAttribute("aria-expanded", false);
+            }
+        });
+    </script>
+</body>
+
+</html>
